@@ -46,7 +46,7 @@ Upload your product file here. It will check every row, save the good ones, and 
 * **Key:** `file`
 * **Value:** (Select your `.csv` or `.xlsx` file)
 
-**Example cURL Request:**
+**Example URL Request:**
 
 ![WhatsApp Image 2025-10-18 at 15 18 08_3bc2d00e](https://github.com/user-attachments/assets/58b5951f-e51b-4e56-a201-5f34fb419e1e)
 
