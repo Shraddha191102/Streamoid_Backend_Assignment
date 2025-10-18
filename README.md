@@ -21,26 +21,9 @@ It's a simple API built with Flask that lets you upload a product catalog (as a 
 
 You'll just need **Python 3** installed.
 
-
-    ```
-
 1.  **Create a Virtual Environment:**
-    (This is a good habit to keep all the packages separate!)
-    ```bash
-    # On Mac/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    
-    # On Windows
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
 
 2.  **Install the Packages:**
-    This project needs Flask (for the server) and openpyxl (to read Excel files).
-    ```bash
-    pip install flask openpyxl
-    ```
 
 3.  **Run the App:**
     ```bash
@@ -49,8 +32,6 @@ You'll just need **Python 3** installed.
     (Assuming your main file is named `app.py`)
 
     That's it! The server will start up and be running on `http://localhost:5000`.
-
----
 
 ## API Endpoints Endpoints Documentation
 
@@ -66,5 +47,8 @@ Upload your product file here. It will check every row, save the good ones, and 
 * **Value:** (Select your `.csv` or `.xlsx` file)
 
 **Example cURL Request:**
-```bash
-curl -X POST -F "file=@products.csv" http://localhost:5000/upload
+
+![WhatsApp Image 2025-10-18 at 15 18 08_3bc2d00e](https://github.com/user-attachments/assets/58b5951f-e51b-4e56-a201-5f34fb419e1e)
+
+![WhatsApp Image 2025-10-18 at 15 20 57_b840cd22](https://github.com/user-attachments/assets/cc2f7191-e354-49c7-b915-1b352b4d5406)
+
