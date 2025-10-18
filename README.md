@@ -2,7 +2,7 @@
 
 Hey! This is my backend project for the Streamoid take-home exercise.
 
-It's a simple API built with Flask that lets you upload a product catalog (as a CSV or Excel file). It checks the file for errors, saves all the good products to a database, and then lets you list or search for them.
+It's a simple API built with Flask that lets you upload a product catalog (as a CSV or Excel file). It checks the file for errors, saves all the good products to a database, and then lets you list or search for them. It's built for reliability, ensuring that only good data makes it into the catalog.
 
 ## What it does
 
@@ -14,6 +14,13 @@ It's a simple API built with Flask that lets you upload a product catalog (as a 
 * **Save to DB:** All the valid products get saved into a local SQLite database (`products.db`).
 * **List Products:** You can `GET` all the products from the database using the `/products` endpoint (it even has pagination!).
 * **Search Products:** You can use `/products/search` to filter by brand, color, or price range.
+
+## Technologies Used
+
+* **Backend Framework:** Flask (Python) – Chosen for its lightweight, modular nature, allowing for rapid development of the core API endpoints.
+* **Data Processing:** Pandas – The heavy-hitter for efficiently reading and processing large product catalog files (.csv, .xlsx) and performing vectorized validation checks.
+* **Database:** SQLite – Used as a simple, file-based database (products.db) for persistence, making setup virtually instantaneous.
+* **Database ORM:** SQLAlchemy – Provides an object-relational mapping layer for clean, Pythonic interaction with the database.
 
 ---
 
@@ -45,6 +52,35 @@ Upload your product file here. It will check every row, save the good ones, and 
 * **Body:** `form-data`
 * **Key:** `file`
 * **Value:** (Select your `.csv` or `.xlsx` file)
+
+### 2. List All Products (Paginated)
+
+Retrieve a list of all products saved in the database.
+* **Endpoint:** GET /products
+* **Method:** GET
+* **Query Parameters (Optional):**
+    * **page:** Page number to retrieve (Default: 1)
+    * **limit:** Products per page (Default: 10)
+ 
+  
+### 3. Search Products
+
+Filter the product catalog based on combined criteria.
+
+* **Endpoint:** GET /products/search
+* **Method:** GET
+* **Query Parameters (Optional - can be combined):**
+     * **brand:** Filter by product brand (e.g., brand=Nike)
+     * **color:** Filter by product color (e.g., color=Red)
+     * **minPrice:** Minimum price (e.g., minPrice=10.00)
+     * **maxPrice:** Maximum price (e.g., maxPrice=50.00)
+
+### 4. Health Check
+
+A simple route to ensure the API service is up and running.
+**Endpoint:** GET /health
+**Method:** GET
+**Response:** {"status": "ok"}
 
 **Example URL Request:**
 
